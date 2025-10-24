@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="256"
+   height="256"
+   viewBox="0 0 256 256"
+   version="1.1"
+   id="svg1"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient3">
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:1;"
+         offset="0"
+         id="stop3" />
+      <stop
+         style="stop-color:#1a1a1a;stop-opacity:0.69999999;"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1">
+      <stop
+         style="stop-color:#ecc40b;stop-opacity:1;"
+         offset="0"
+         id="stop1" />
+      <stop
+         style="stop-color:#61fcdd;stop-opacity:1;"
+         offset="1"
+         id="stop2" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient1"
+       id="linearGradient2"
+       x1="8.5728378"
+       y1="127.91779"
+       x2="240.87544"
+       y2="127.91779"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(3.2784184,0.08155232)" />
+    <linearGradient
+       xlink:href="#linearGradient3"
+       id="linearGradient4"
+       x1="42.369545"
+       y1="127.61597"
+       x2="165.74992"
+       y2="127.61597"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     id="layer1">
+    <path
+       style="fill:url(#linearGradient2);stroke:none;stroke-width:0.5"
+       d="M 128.08059,16.644083 C 81.545683,25.685905 -10.673704,209.29397 17.274923,232.42353 45.22355,255.55309 231.7841,218.4335 242.85193,194.16642 253.91976,169.89934 174.61549,7.6022611 128.08059,16.644083 Z"
+       id="path1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:256px;font-family:'Noto Sans Mono';-inkscape-font-specification:'Noto Sans Mono Bold';text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:url(#linearGradient4);stroke:none;stroke-width:0.5"
+       x="29.051674"
+       y="213.63208"
+       id="text1"><tspan
+         id="tspan1"
+         x="29.051674"
+         y="213.63208"
+         style="fill:url(#linearGradient4);stroke:none">t</tspan></text>
+  </g>
+</svg>
