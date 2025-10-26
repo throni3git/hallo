@@ -87,8 +87,8 @@
   }
 
   const listSnippets: Array<string> = [];
-  if (filteredLinks.length > 0) {
-    const creators = buildCreators(filteredLinks);
+  if (linkList.length > 0) {
+    const creators = buildCreators(linkList);
     const pairCreators = buildCreatorPairs(creators);
 
     const SNIPPET_LENGTH = 1000;
@@ -124,12 +124,11 @@
 </script>
 
 <div class="text-carpet">
-  {#if filteredLinks.length > 0}
-    {#each filteredLinks as lll, idx}
+  {#if linkList.length > 0}
+    {#each linkList as lll, idx}
       <span class="inbetween-text">{listSnippets[idx]}</span><a
         href={"./" + lll}>{lll}</a
-      >{/each}<span class="inbetween-text"
-      >{listSnippets[filteredLinks.length]}</span
+      >{/each}<span class="inbetween-text">{listSnippets[linkList.length]}</span
     >
   {/if}
 </div>
