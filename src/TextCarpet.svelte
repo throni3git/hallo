@@ -5,6 +5,10 @@
 
   let { linkList }: Props = $props();
 
+  let listSnippets: Array<string> = $derived.by(createSnippetsFromLinkList);
+  let clientHeight = $state(0);
+  let clientWidth = $state(0);
+
   function countLetters(input: string): Record<string, number> {
     const result: Record<string, number> = {};
     for (const char of input) {
@@ -85,25 +89,36 @@
     return allPairCreators;
   }
 
-  const listSnippets: Array<string> = [];
-  if (linkList.length > 0) {
+  function createSnippetsFromLinkList(): Array<string> {
+    if (linkList.length === 0) {
+      return [];
+    }
+
+    if (clientHeight === 0 || clientWidth === 0) {
+      return [];
+    }
+
     const creators = buildCreators(linkList);
     const pairCreators = buildCreatorPairs(creators);
 
-    const SNIPPET_LENGTH = 1000;
+    let snippetLength = clientWidth / linkList.length;
+    snippetLength *= 2;
+    snippetLength = Math.round(snippetLength);
 
+    const result = [];
     for (const pairCreator of pairCreators) {
       const snippet = [];
-      for (let idx = 0; idx < SNIPPET_LENGTH; idx++) {
-        const letter = pairCreator(idx / SNIPPET_LENGTH);
+      for (let idx = 0; idx < snippetLength; idx++) {
+        const letter = pairCreator(idx / snippetLength);
         snippet.push(letter);
       }
-      listSnippets.push(snippet.join(""));
+      result.push(snippet.join(""));
     }
+    return result;
   }
 </script>
 
-<div class="text-carpet">
+<div class="text-carpet" bind:clientHeight bind:clientWidth>
   {#if linkList.length > 0}
     {#each linkList as lll, idx}
       <span class="inbetween-text">{listSnippets[idx]}</span><a
