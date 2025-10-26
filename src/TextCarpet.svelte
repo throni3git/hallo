@@ -1,8 +1,10 @@
 <script lang="ts">
-  let { links } = $props();
+  interface Props {
+    linkList: Array<string>;
+  }
 
-  const listLinks = links;
-  const filteredLinks = listLinks;
+  let { linkList }: Props = $props();
+  const filteredLinks = linkList;
 
   function countLetters(input: string): Record<string, number> {
     const result = {};

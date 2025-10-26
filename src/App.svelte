@@ -5,7 +5,7 @@
 </script>
 
 <main>
-  <TextCarpet links={listLinks}></TextCarpet>
+  <TextCarpet linkList={listLinks}></TextCarpet>
 </main>
 
 <style>
