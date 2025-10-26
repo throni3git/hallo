@@ -6,7 +6,7 @@
   let { linkList }: Props = $props();
 
   function countLetters(input: string): Record<string, number> {
-    const result = {};
+    const result: Record<string, number> = {};
     for (const char of input) {
       if (Object.hasOwn(result, char)) {
         result[char]++;
@@ -17,7 +17,7 @@
     return result;
   }
 
-  function getContinuousProbabilitySteps(letterMap) {
+  function getContinuousProbabilitySteps(letterMap: Record<string, number>) {
     const allKeys = Object.keys(letterMap);
     const allValues = Object.values(letterMap);
     const totalAmount = allValues.reduce((prev, curr) => prev + curr);
@@ -28,7 +28,7 @@
     const propabilitiesInRange = cumulativePropabilities.map(
       (value) => value / totalAmount
     );
-    const result = {};
+    const result: Record<string, number> = {};
     for (let idx = 0; idx < allValues.length; idx++) {
       result[allKeys[idx]] = propabilitiesInRange[idx];
     }
@@ -36,7 +36,7 @@
   }
 
   function getRandomLetterFromProbabilities(
-    letterMapWithContinuousPropabilities
+    letterMapWithContinuousPropabilities: Record<string, number>
   ) {
     const pick = Math.random();
     const allValues = Object.values(letterMapWithContinuousPropabilities);
@@ -50,7 +50,7 @@
     return "";
   }
 
-  function buildCreators(texts) {
+  function buildCreators(texts: Array<string>) {
     const allCreators = [];
     for (const text of texts) {
       const amounts = countLetters(text);
@@ -63,7 +63,7 @@
     return allCreators;
   }
 
-  function buildCreatorPairs(creators) {
+  function buildCreatorPairs(creators: Array<() => string>) {
     const repeatedCreators = [
       creators[0],
       ...creators,
@@ -71,7 +71,7 @@
     ];
     const allPairCreators = [];
     for (let idx = 0; idx < repeatedCreators.length - 1; idx++) {
-      const pairCreator = (progress) => {
+      const pairCreator = (progress: number) => {
         const pick = Math.random();
         if (pick > progress) {
           const value1 = repeatedCreators[idx]();
