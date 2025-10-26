@@ -1,11 +1,19 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import TextCarpet from "./TextCarpet.svelte";
 
-  let listLinks = ["thaumatrop", "kulturkennenlernen"];
+  let listLinks: Array<string> = [];
+  onMount(async () => {
+    const fetchResult = await fetch("./settings.json");
+    const allDirs = await fetchResult.json();
+    listLinks = allDirs["exposedDirectories"];
+  });
 </script>
 
 <main>
-  <TextCarpet linkList={listLinks}></TextCarpet>
+  {#if listLinks.length > 0}
+    <TextCarpet linkList={listLinks}></TextCarpet>
+  {/if}
 </main>
 
 <style>
