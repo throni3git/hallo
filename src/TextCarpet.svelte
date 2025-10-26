@@ -101,8 +101,8 @@
     const creators = buildCreators(linkList);
     const pairCreators = buildCreatorPairs(creators);
 
-    let snippetLength = clientWidth / linkList.length;
-    snippetLength *= 2;
+    let snippetLength = clientWidth / (linkList.length + 1);
+    snippetLength *= 0.5;
     snippetLength = Math.round(snippetLength);
 
     const result = [];
@@ -131,6 +131,7 @@
 <style>
   .text-carpet {
     word-wrap: break-word;
+    font-size: 3em;
   }
 
   .inbetween-text {
