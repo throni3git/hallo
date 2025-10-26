@@ -102,7 +102,7 @@
     const pairCreators = buildCreatorPairs(creators);
 
     let snippetLength = clientWidth / (linkList.length + 1);
-    snippetLength *= 0.5;
+    snippetLength *= 0.25;
     snippetLength = Math.round(snippetLength);
 
     const result = [];
