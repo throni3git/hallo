@@ -4,7 +4,6 @@
   }
 
   let { linkList }: Props = $props();
-  const filteredLinks = linkList;
 
   function countLetters(input: string): Record<string, number> {
     const result = {};
@@ -101,25 +100,6 @@
       }
       listSnippets.push(snippet.join(""));
     }
-
-    const listFragments = [];
-    for (let idx = 0; idx < filteredLinks.length; idx++) {
-      const spanElement = document.createElement("span");
-      spanElement.classList.add("inbetween-text");
-      spanElement.innerText = listSnippets[idx];
-      listFragments.push(spanElement);
-
-      const linkElement = document.createElement("a");
-      linkElement.href = "./" + filteredLinks[idx];
-      linkElement.innerText = filteredLinks[idx];
-      listFragments.push(linkElement);
-    }
-    const spanElement = document.createElement("span");
-    spanElement.classList.add("inbetween-text");
-    spanElement.innerText = listSnippets[listSnippets.length - 1];
-    listFragments.push(spanElement);
-
-    console.log(listFragments);
   }
 </script>
 
