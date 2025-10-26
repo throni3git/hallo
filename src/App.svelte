@@ -1,8 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import TextCarpet from "./TextCarpet.svelte";
+  import Impressum from "./Impressum.svelte";
 
-  let listLinks: Array<string> = [];
+  let showImprint = $state(false);
+
+  let listLinks: Array<string> = $state([]);
   onMount(async () => {
     const fetchResult = await fetch("./settings.json");
     const allDirs = await fetchResult.json();
@@ -16,7 +19,12 @@
     <TextCarpet linkList={listLinks}></TextCarpet>
   {/if}
 </main>
-<footer>impressum</footer>
+<footer>
+  <div onclick={() => (showImprint = !showImprint)}>impressum</div>
+  {#if showImprint}
+    <Impressum></Impressum>
+  {/if}
+</footer>
 
 <style>
   header {
